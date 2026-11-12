@@ -85,8 +85,39 @@ def mueve_serpiente(serpiente: list[tuple[int, int]], direccion: str, filas: int
     filas: Número de filas en el tablero de juego.
     columnas: Número de columnas en el tablero de juego.
     '''
-    # TODO: Ejercicio 5
-    pass
+    if direccion == "Up":
+        nueva_cabeza = serpiente[0][0], serpiente[0][1] - 1
+        if nueva_cabeza[1] < 0:
+            nueva_cabeza = serpiente[0][0], filas - 1
+
+        serpiente.insert(0, nueva_cabeza)
+
+    if direccion == "Down":
+        nueva_cabeza = serpiente[0][0], serpiente[0][1] + 1
+        if nueva_cabeza[1] == filas:
+            nueva_cabeza = serpiente[0][0], 0
+
+        serpiente.insert(0, nueva_cabeza)
+
+    if direccion == "Right":
+        nueva_cabeza = serpiente[0][0] + 1, serpiente[0][1]
+        if nueva_cabeza[0] == columnas:
+            nueva_cabeza = 0, serpiente[0][1]
+
+        serpiente.insert(0, nueva_cabeza)
+
+    if direccion == "Left":
+        nueva_cabeza = serpiente[0][0] - 1, serpiente[0][1]
+        if nueva_cabeza[0] < 0:
+            nueva_cabeza = columnas - 1, serpiente[0][1]
+
+        serpiente.insert(0, nueva_cabeza)
+
+    else:
+        pass
+
+    serpiente.pop()
+
 
 
 
