@@ -108,7 +108,7 @@ def test_mueve_serpiente():
 # Descomenta las siguientes líneas para ejecutar los tests
 test_comprueba_choque()
 test_ha_comido_serpiente()
-#test_crece_serpiente()
+test_crece_serpiente()
 #test_genera_comida_aleatoria()
 #test_mueve_serpiente() 
 print("Todos los tests superados.")
