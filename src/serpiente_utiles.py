@@ -11,7 +11,8 @@ def ha_comido_serpiente(serpiente: list[tuple[int, int]], posicion_comida: tuple
     Devuelve:
     True si la cabeza de la serpiente está en la misma posición que la comida, False en caso contrario.
     '''
-    # TODO: Ejercicio 1
+    if serpiente[0] == posicion_comida:
+        return True
     return False
 
 def comprueba_choque(serpiente: list[tuple[int, int]], paredes: list[list[tuple[int, int]]]) -> bool:
