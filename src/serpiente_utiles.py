@@ -57,8 +57,21 @@ def genera_comida_aleatoria(serpiente: list[tuple[int, int]], paredes: list[list
     Devuelve:
     Posición aleatoria para la comida (columna, fila).
     '''
-    # TODO: Ejercicio 4
-    return (0, 0)
+    choca = True
+    while choca:
+        choca = False
+        columna, fila = random.randint(0, columnas - 1), random.randint(0, filas - 1)
+
+        if (columna, fila) in serpiente:
+            choca = True
+
+        for pared in paredes:
+            if (columna, fila) in pared:
+                choca = True
+        
+
+    return (columna, fila)
+
 
 def mueve_serpiente(serpiente: list[tuple[int, int]], direccion: str, filas: int, columnas: int) -> None:
     '''
