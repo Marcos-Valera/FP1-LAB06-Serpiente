@@ -28,8 +28,12 @@ def comprueba_choque(serpiente: list[tuple[int, int]], paredes: list[list[tuple[
     Devuelve:
     True si la serpiente se ha chocado consigo misma o con las paredes, False en caso contrario.
     '''
-    # TODO: Ejercicio 2
-    return False 
+    if serpiente[0] in serpiente[1:]:
+        return True
+    for pared in paredes:
+        if serpiente[0] in pared:
+            return True
+    return False
 
 def crece_serpiente(serpiente: list[tuple[int, int]]) -> None:
     '''
