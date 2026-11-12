@@ -69,7 +69,6 @@ def genera_comida_aleatoria(serpiente: list[tuple[int, int]], paredes: list[list
             if (columna, fila) in pared:
                 choca = True
         
-
     return (columna, fila)
 
 
@@ -92,21 +91,21 @@ def mueve_serpiente(serpiente: list[tuple[int, int]], direccion: str, filas: int
 
         serpiente.insert(0, nueva_cabeza)
 
-    if direccion == "Down":
+    elif direccion == "Down":
         nueva_cabeza = serpiente[0][0], serpiente[0][1] + 1
         if nueva_cabeza[1] == filas:
             nueva_cabeza = serpiente[0][0], 0
 
         serpiente.insert(0, nueva_cabeza)
 
-    if direccion == "Right":
+    elif direccion == "Right":
         nueva_cabeza = serpiente[0][0] + 1, serpiente[0][1]
         if nueva_cabeza[0] == columnas:
             nueva_cabeza = 0, serpiente[0][1]
 
         serpiente.insert(0, nueva_cabeza)
 
-    if direccion == "Left":
+    elif direccion == "Left":
         nueva_cabeza = serpiente[0][0] - 1, serpiente[0][1]
         if nueva_cabeza[0] < 0:
             nueva_cabeza = columnas - 1, serpiente[0][1]
